@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>progressbar.js example</title>
+</head>
+<body>
+<progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+<span id="status"></span>
+
+<input type="button" value="Загружать" onclick="progressBarSim(0)" id="btnload">
+<script>
+    function progressBarSim(al) {
+        var bar = document.getElementById('progressBar');
+        var status = document.getElementById('status');
+        var btnload = document.getElementById('btnload');
+        btnload.value = "Загружать"
+        status.innerHTML = al+"%";
+        bar.value = al;
+        al+=10;
+        var sim = setTimeout("progressBarSim("+al+")",300);
+        if(al == 100){
+            status.innerHTML = "100%";
+            btnload.value = "Загружено"
+            bar.value = 100;
+            clearTimeout(sim);
+        }
+    }
+</script>
+</body>
+</html>
