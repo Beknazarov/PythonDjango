@@ -1,1 +1,1 @@
-Nursultan Django Programmer
+Nursultan Django Programmer Python
